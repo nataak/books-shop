@@ -11,9 +11,27 @@ fetch('../js/data.json')
     }
   }).then((data) => {
     // this is JSON
-    for (key in data) {
-    }
 
+
+    const generateCard = (author, image, title, price, description) => {
+      return `
+       <div class='cards'>
+       <h2>${author} </h2>
+       <img src="${image}" alt="" />
+       <p>${title}</p>
+       <span>${price}</span>
+       <p>${description}</p>
+       </div>
+        `;
+    }
+    const cardHTMl = data.map((card) => {
+      return generateCard(card.author, card.image, card.title, card.price, card.description);
+
+    }).join('');
+    let books = document.createElement('div');
+    books.classList.add('books');
+    container.append(books);
+    books.innerHTML = cardHTMl;
 
   }).catch((err) => {
     // Somtihing wrong
