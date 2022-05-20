@@ -73,6 +73,17 @@ button {
 
 .container {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1280px;
   width: 100%;
+  background-color: aqua;
+}
+
+.parrent {
+  width: 59px;
+  height: 59px;
+  background-color: green;
+}
+.header {
+  margin: 0;
+  text-align: center;
 }
