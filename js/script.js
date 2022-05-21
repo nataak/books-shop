@@ -19,11 +19,14 @@ fetch('../js/data.json')
        
        <img src="${imageLink}" alt="JS book" />
        <div class="card-wrapper">
-         <h2>${author} </h2>
-         <p>${title}</p>
-         <span>${price}</span>
-         <button class="btn">Show More</button>
-         <button class="btn btn-add">Add to Bag</button>
+         <h2  class="author">${author} </h2>
+         <p class="books-title">${title}</p>
+         <span class="price">price: &#36; ${price}
+          </span>
+         <div>
+           <button class="btn">Show More</button>
+           <button class="btn btn-add">Add to Bag</button>
+         </div>
        </div>
        <div class="popup-wrapper hidden">
          <p class="popup-text">${description}</p>

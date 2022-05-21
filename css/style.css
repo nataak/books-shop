@@ -40,6 +40,9 @@
   font-weight: 400;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -94,12 +97,14 @@ button {
 .sub-header {
   margin: 0;
   text-align: center;
-  padding: 60px;
+  padding: 60px 0 20px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  color: #504dac;
 }
 .books {
   width: 80wh;
   min-height: 90vh;
-  border: 2px solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -109,9 +114,9 @@ button {
 .cards {
   height: 350px;
   width: 490px;
-  border: 1px solid crimson;
   display: flex;
   background-color: #faf0f6;
+  position: relative;
 }
 img {
   width: 240px;
@@ -136,8 +141,108 @@ img {
 }
 
 .card-wrapper {
-  padding-left: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title-link {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  color: #504dac;
+}
+
+.title-link:hover {
+  color: #3697d8;
+}
+
+.title {
+  transition: 2s;
+}
+
+.title:hover {
+  transform: scale(1.1);
+}
+.author {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #5c6a79;
+}
+
+.books-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2a2a8f;
+}
+
+.price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #101029;
+}
+.btn {
+  width: 60%;
+  height: 30px;
+  padding: 5px;
+  background-color: #5ed690;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  color: #626286;
+  text-transform: uppercase;
+  transition: 2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-add {
+  width: 100%;
+  font-size: 12px;
+  height: 40px;
+  background-color: #ec447c;
+  color: #ddb2b2;
+}
+
+.popup-wrapper {
+  display: block;
+  width: 550px;
+  height: 250px;
+  position: absolute;
+  background-color: rgba(230, 226, 243, 0.95);
+  padding: 20px;
+  border-radius: 20px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.popup-text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #382a5a;
+}
+.btn-close {
+  width: 25%;
+  background-color: #c5253a;
+  color: #f8f5f5;
 }
