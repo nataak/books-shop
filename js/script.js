@@ -13,19 +13,27 @@ fetch('../js/data.json')
     // this is JSON
 
 
-    const generateCard = (author, image, title, price, description) => {
+    const generateCard = (author, imageLink, title, price, description) => {
       return `
        <div class='cards'>
-       <h2>${author} </h2>
-       <img src="${image}" alt="" />
-       <p>${title}</p>
-       <span>${price}</span>
-       <p>${description}</p>
+       
+       <img src="${imageLink}" alt="JS book" />
+       <div class="card-wrapper">
+         <h2>${author} </h2>
+         <p>${title}</p>
+         <span>${price}</span>
+         <button class="btn">Show More</button>
+         <button class="btn btn-add">Add to Bag</button>
+       </div>
+       <div class="popup-wrapper hidden">
+         <p class="popup-text">${description}</p>
+         <button class="btn btn-close">Close</button>
+       </div>
        </div>
         `;
     }
     const cardHTMl = data.map((card) => {
-      return generateCard(card.author, card.image, card.title, card.price, card.description);
+      return generateCard(card.author, card.imageLink, card.title, card.price, card.description);
 
     }).join('');
     let books = document.createElement('div');
@@ -52,10 +60,16 @@ let container = document.createElement("div");
 container.classList.add('container');
 frag.appendChild(container);
 
-let header = document.createElement('h1');
+let header = document.createElement('header');
 header.classList.add('header');
-header.innerText = 'Book Shop';
+header.innerHTML = '<h1 class="title"><a href="#sub-header" class="title-link">Welcom to amazing Book shop!</a></h1>'
 container.prepend(header);
+
+let subtitle = document.createElement('h2');
+subtitle.classList.add('sub-header');
+subtitle.id = 'sub-header'
+subtitle.innerText = 'Books Catalog';
+container.append(subtitle);
 
 
 wrapper.appendChild(frag);
