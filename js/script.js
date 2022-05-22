@@ -1,5 +1,5 @@
 let key;
-fetch('../js/data.json')
+fetch('./js/data.json')
   .then((response) => {
     if (response.ok) {
       return response.json();
