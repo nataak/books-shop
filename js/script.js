@@ -13,13 +13,13 @@ fetch('../js/data.json')
 
     const generateCard = (author, imageLink, title, price, description) => {
       return `
-       <div class='cards'>
+       <div class='cards' value="1" data="${price}">
        
        <img src="${imageLink}" alt="JS book" />
-       <div class="card-wrapper">
+       <div class="card-wrapper" >
          <h2  class="author">${author} </h2>
          <p class="books-title">${title}</p>
-         <span class="price">price: &#36; ${price}
+         <span class="price">price:  ${price} &#36;
           </span>
          <div>
            <button class="btn btn-more" data-toggle-id="open">Show More</button>
@@ -98,6 +98,7 @@ window.addEventListener('load', function () {
       field = document.createElement('div'),
       heading = document.createElement('h3'),
       wrap = document.createElement('div'),
+      card = document.createElement('div'),
       close = document.createElement('button'),
       abs = document.createElement('button');
 
@@ -139,10 +140,10 @@ window.addEventListener('load', function () {
 
   openBtn.addEventListener('click', openCart);
   close.addEventListener('click', closeCart);
-
-  buttons.forEach(function (item, i) {
+  buttons.forEach(function (item, i, arr) {
     item.addEventListener('click', function () {
       let item = products[i].cloneNode(true);
+
       let btn = item.querySelector('.btn');
       let btn2 = item.querySelector('.btn-add');
 
